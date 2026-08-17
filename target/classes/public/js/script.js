@@ -559,8 +559,28 @@ if (songTitle) {
 
         document.title = `${track.title} — Bruna Foss`;
 
+        /* SEO — DESCRIPTION */
+
+        let metaDescription =
+            document.querySelector('meta[name="description"]');
+
+        if (!metaDescription) {
+
+            metaDescription =
+                document.createElement("meta");
+
+            metaDescription.name = "description";
+
+            document.head.appendChild(metaDescription);
+        }
+
+        metaDescription.content =
+            `${track.title}, música de Bruna Foss. Conheça a letra, o significado e assista ao vídeo da canção.`;
+
         document.getElementById("songTitle").textContent = track.title;
         document.getElementById("songCategory").textContent = track.type;
+
+        /* VIDEO */
 
         /* VIDEO */
 
