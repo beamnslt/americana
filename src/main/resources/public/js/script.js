@@ -337,7 +337,7 @@ if (extraFeatured && extraGrid) {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            Ler matéria ↗ <span class="mobile-hide-arrow">↗</span>
+                            Ler matéria <span class="mobile-hide-arrow">↗</span>
                         </a>
 
                     </div>
@@ -391,7 +391,7 @@ if (extraFeatured && extraGrid) {
 
                 <p>
                     ${item.type === "video" ? "YouTube" : "Banda B"}
-                    • ${item.year} ↗
+                    • ${item.year}<span class="mobile-hide-arrow">↗</span>
                 </p>
 
             </div>
