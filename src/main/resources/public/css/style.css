@@ -55,11 +55,33 @@ a {
 
     z-index: 1000;
 
-    background: rgba(6, 19, 28, 0.82);
-    backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--line);
-}
+    background: linear-gradient(
+            to bottom,
+            rgba(6, 19, 28, 0.92) 0%,
+            rgba(6, 19, 28, 0.72) 55%,
+            rgba(6, 19, 28, 0) 100%
+    );
 
+    backdrop-filter: blur(12px);
+}
+.site-header::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 55px;
+
+    background: linear-gradient(
+            to bottom,
+            rgba(6, 19, 28, 0.28),
+            rgba(6, 19, 28, 0.08),
+            transparent
+    );
+
+    filter: blur(4px);
+    pointer-events: none;
+}
 .logo {
     position: relative;
     display: inline-block;
@@ -169,7 +191,7 @@ a {
             radial-gradient(
                     circle at 70% 20%,
                     rgba(18, 67, 55, 0.6),
-                    transparent 45%
+                    transparent 30%
             ),
             linear-gradient(
                     90deg,
@@ -203,6 +225,7 @@ a {
     transition:
             transform 0.5s ease,
             box-shadow 0.5s ease;
+
 }
 
 .hero-image img {
@@ -1930,6 +1953,19 @@ footer p {
     }
 
 }
+.lightbox-nav {
+    width: 42px;
+    height: 42px;
+    font-size: 17px;
+}
+
+.lightbox-prev {
+    left: 12px;
+}
+
+.lightbox-next {
+    right: 12px;
+}
 /* =========================================
    EXTRA — FEATURED VIDEO LAYERS
 ========================================= */
@@ -1985,4 +2021,484 @@ footer p {
     height: 100%;
     border: none;
     z-index: 3;
+}
+/* =========================================================
+   LIVE / PHOTOBOOK
+========================================================= */
+
+.live-section {
+    position: relative;
+    overflow: hidden;
+
+    background: var(--navy-950);
+}
+.live-section::before {
+    content: "";
+    position: absolute;
+    inset: -40px;
+
+    background-image: url("../images/show-01.jpg");
+    background-size: cover;
+    background-position: center;
+
+    filter: blur(20px);
+    grayscale(25%);
+
+    opacity: 0.32;
+
+    z-index: 0;
+}
+.live-section > * {
+    position: relative;
+    z-index: 2;
+}
+.live-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+            linear-gradient(
+                    90deg,
+                    rgba(6, 19, 28, 0.88),
+                    rgba(6, 19, 28, 0.68)
+            );
+
+    z-index: 1;
+    pointer-events: none;
+}
+.live-heading {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 80px;
+    align-items: end;
+    margin-bottom: 80px;
+}
+
+.live-title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.live-label {
+    color: var(--accent);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.live-subtitle {
+    font-family: "Courier Prime", monospace;
+    font-size: 16px;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    margin-bottom: 30px;
+}
+
+.live-title h2 {
+    margin: 0;
+
+    font-family: var(--font-display);
+    font-size: clamp(55px, 7vw, 105px);
+    line-height: 0.9;
+    letter-spacing: -0.06em;
+}
+
+.live-title h2 em {
+    font-style: italic;
+    color: var(--accent);
+}
+
+.live-intro {
+    max-width: 390px;
+    padding-bottom: 8px;
+}
+
+.live-intro p {
+    margin: 0 0 5px;
+    line-height: 1.7;
+    color: var(--muted);
+}
+
+.live-date {
+    font-family: "Courier Prime", monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--cream);
+}
+
+.live-intro {
+    max-width: 390px;
+    padding-bottom: 8px;
+}
+
+.live-intro p {
+    margin: 0 0 5px;
+    line-height: 1.7;
+    opacity: 0.75;
+}
+
+.live-date {
+    font-family: "Courier Prime", monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+}
+
+
+/* =========================================================
+   PHOTOBOOK GRID
+========================================================= */
+
+.photobook {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 300px 260px 380px;
+    gap: 14px;
+    position: relative;
+}
+
+.photo {
+    position: relative;
+    display: block;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    overflow: hidden;
+    background: none;
+    cursor: pointer;
+    text-align: left;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+
+    filter: grayscale(100%);
+    transition:
+            transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+            filter 0.5s ease;
+}
+
+.photo:hover img {
+    transform: scale(1.045);
+    filter: grayscale(0%);
+}
+
+
+/* FOTO 01 — grande */
+
+.photo-main {
+    grid-column: 1 / 8;
+    grid-row: 1 / 3;
+}
+
+
+/* FOTO 02 */
+
+.photo-02 {
+    grid-column: 8 / 13;
+    grid-row: 1;
+}
+
+
+/* FOTO 03 */
+
+.photo-03 {
+    grid-column: 8 / 13;
+    grid-row: 2;
+}
+
+
+/* FOTO 04 */
+
+.photo-04 {
+    grid-column: 1 / 5;
+    grid-row: 3;
+}
+
+
+/* FOTO 05 */
+
+.photo-05 {
+    grid-column: 5 / 10;
+    grid-row: 3;
+}
+
+
+/* FOTO 06 */
+
+.photo-06 {
+    grid-column: 10 / 13;
+    grid-row: 3;
+}
+
+
+
+/* =========================================================
+   FOOTER DO PHOTOBOOK
+========================================================= */
+
+.live-footer {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 18px;
+    padding-top: 18px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+
+    font-family: "Courier Prime", monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+
+    opacity: 0.55;
+}
+
+
+/* =========================================================
+   PHOTO LIGHTBOX
+========================================================= */
+
+.photo-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px;
+
+    background: rgba(0, 0, 0, 0.94);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease;
+}
+
+.photo-lightbox.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.photo-lightbox img {
+    max-width: 92vw;
+    max-height: 88vh;
+
+    object-fit: contain;
+
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.5);
+}
+
+
+.lightbox-close {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+
+    border: none;
+    background: none;
+
+    color: white;
+
+    font-family: "Courier Prime", monospace;
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+
+.lightbox-counter {
+    position: absolute;
+    bottom: 25px;
+    left: 30px;
+
+    color: white;
+
+    font-family: "Courier Prime", monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+
+    opacity: 0.7;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .live-heading {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-bottom: 45px;
+    }
+
+    .live-intro {
+        max-width: 100%;
+    }
+    .live-title h2 {
+        font-size: clamp(52px, 15vw, 75px);
+    }
+
+    .live-subtitle {
+        margin-bottom: 22px;
+    }
+    .photobook {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows:
+            330px
+            220px
+            280px
+            280px;
+
+        gap: 10px;
+    }
+
+    .photo-main {
+        grid-column: 1 / 3;
+        grid-row: 1;
+    }
+
+    .photo-02 {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .photo-03 {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .photo-04 {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .photo-05 {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    .photo-06 {
+        grid-column: 1 / 3;
+        grid-row: 4;
+    }
+
+    .photo-last {
+        display: none;
+    }
+
+    .live-footer {
+        font-size: 9px;
+    }
+
+}
+/* =========================================================
+   PHOTO LIGHTBOX — NAVEGAÇÃO
+========================================================= */
+
+.lightbox-nav {
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+
+    background: rgba(6, 19, 28, 0.65);
+
+    color: white;
+
+    font-family: "Courier Prime", monospace;
+    font-size: 20px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(8px);
+
+    transition:
+            background 0.3s ease,
+            transform 0.3s ease;
+}
+
+.lightbox-nav:hover {
+    background: rgba(18, 67, 55, 0.9);
+}
+
+.lightbox-prev {
+    left: 30px;
+}
+
+.lightbox-next {
+    right: 30px;
+}
+@media (max-width: 600px) {
+
+    /* =========================================
+       ÍCONES — MOBILE
+    ========================================= */
+
+    /* Remove a aparência de emoji da seta externa */
+    .track-arrow {
+        font-size: 0;
+    }
+
+    .track-arrow::after {
+        content: "";
+
+        display: block;
+
+        width: 7px;
+        height: 7px;
+
+        border-top: 1px solid var(--cream);
+        border-right: 1px solid var(--cream);
+
+        transform: rotate(45deg);
+    }
+
+
+    /* =========================================
+       PLAY BUTTON — MOBILE
+    ========================================= */
+
+    .play-button {
+        font-size: 0;
+        padding-left: 0;
+    }
+
+    .play-button::after {
+        content: "";
+
+        display: block;
+
+        width: 0;
+        height: 0;
+
+        border-top: 7px solid transparent;
+        border-bottom: 7px solid transparent;
+        border-left: 10px solid var(--cream);
+
+        margin-left: 3px;
+    }
 }

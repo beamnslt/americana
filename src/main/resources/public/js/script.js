@@ -688,3 +688,153 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+/* =========================================================
+   PHOTOBOOK — LIGHTBOX
+========================================================= */
+
+const photoButtons = document.querySelectorAll(".photobook .photo");
+
+if (photoButtons.length) {
+
+    const lightbox = document.createElement("div");
+
+    lightbox.className = "photo-lightbox";
+
+    lightbox.innerHTML = `
+        <button class="lightbox-close" aria-label="Fechar">
+            ×
+        </button>
+
+        <img src="" alt="">
+
+        <span class="lightbox-counter"></span>
+    `;
+
+    document.body.appendChild(lightbox);
+
+
+    const lightboxImage =
+        lightbox.querySelector("img");
+
+    const lightboxClose =
+        lightbox.querySelector(".lightbox-close");
+
+    const lightboxCounter =
+        lightbox.querySelector(".lightbox-counter");
+    const lightboxPrev = document.createElement("button");
+    const lightboxNext = document.createElement("button");
+
+    lightboxPrev.className = "lightbox-nav lightbox-prev";
+    lightboxNext.className = "lightbox-nav lightbox-next";
+
+    lightboxPrev.innerHTML = "←";
+    lightboxNext.innerHTML = "→";
+
+    lightboxPrev.setAttribute("aria-label", "Foto anterior");
+    lightboxNext.setAttribute("aria-label", "Próxima foto");
+
+    lightbox.appendChild(lightboxPrev);
+    lightbox.appendChild(lightboxNext);
+    let currentPhotoIndex = 0;
+
+    function showPhoto(index) {
+
+        if (index < 0) {
+            index = photoButtons.length - 1;
+        }
+
+        if (index >= photoButtons.length) {
+            index = 0;
+        }
+
+        currentPhotoIndex = index;
+
+        const button = photoButtons[currentPhotoIndex];
+
+        const image = button.dataset.photo;
+
+        lightboxImage.src = image;
+
+        lightboxImage.alt =
+            button.querySelector("img").alt;
+
+        lightboxCounter.textContent =
+            `${String(currentPhotoIndex + 1).padStart(2, "0")} / ${String(photoButtons.length).padStart(2, "0")}`;
+    }
+    photoButtons.forEach((button, index) => {
+
+        button.addEventListener("click", () => {
+
+            showPhoto(index);
+
+            lightbox.classList.add("open");
+
+            document.body.style.overflow = "hidden";
+        });
+
+    });
+    lightboxPrev.addEventListener("click", (event) => {
+
+        event.stopPropagation();
+
+        showPhoto(currentPhotoIndex - 1);
+
+    });
+
+
+    lightboxNext.addEventListener("click", (event) => {
+
+        event.stopPropagation();
+
+        showPhoto(currentPhotoIndex + 1);
+
+    });
+
+    function closeLightbox() {
+
+        lightbox.classList.remove("open");
+
+        document.body.style.overflow = "";
+
+        setTimeout(() => {
+            lightboxImage.src = "";
+        }, 300);
+    }
+
+
+    lightboxClose.addEventListener(
+        "click",
+        closeLightbox
+    );
+
+
+    lightbox.addEventListener("click", (event) => {
+
+        if (event.target === lightbox) {
+            closeLightbox();
+        }
+
+    });
+
+
+    document.addEventListener("keydown", (event) => {
+
+        if (!lightbox.classList.contains("open")) {
+            return;
+        }
+
+        if (event.key === "Escape") {
+            closeLightbox();
+        }
+
+        if (event.key === "ArrowLeft") {
+            showPhoto(currentPhotoIndex - 1);
+        }
+
+        if (event.key === "ArrowRight") {
+            showPhoto(currentPhotoIndex + 1);
+        }
+
+    });
+
+}

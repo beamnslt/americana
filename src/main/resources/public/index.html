@@ -22,6 +22,7 @@
         <a href="#about">Sobre</a>
         <a href="#music">Música</a>
         <a href="#ep">EP</a>
+        <a href="#live">Show</a>
         <a href="#extra">Extra</a>
         <a href="#contact">Social</a>
     </nav>
@@ -36,6 +37,7 @@
     <a href="#about">Sobre</a>
     <a href="#music">Músicas</a>
     <a href="#ep">EP</a>
+    <a href="#live">Show</a>
     <a href="#extra">Extra</a>
     <a href="#contact">Social</a>
 </div>
@@ -45,7 +47,7 @@
     <!-- HERO -->
     <section class="hero">
         <div class="hero-image">
-                <img src="/images/bruna.jpg" alt="Bruna Foss">
+                <img src="/images/show-01.jpg" alt="Bruna Foss">
         </div>
 
         <div class="hero-content">
@@ -61,7 +63,7 @@
 
     <!-- ABOUT -->
     <section class="section about-section" id="about">
-        <div class="section-label">01 / SOBRE</div>
+        <div class="section-label">SOBRE</div>
 
         <div class="about-grid">
             <h2>Música brasileira<br><em>contada por olhos que aprenderam a ver <span>o mundo.</span></em></h2>
@@ -88,7 +90,7 @@
 
     <!-- MUSIC -->
     <section class="section music-section" id="music">
-        <div class="section-label">02 / MÚSICA</div>
+        <div class="section-label">MÚSICA</div>
 
         <div class="music-heading">
             <div>
@@ -113,7 +115,7 @@
 
     <!-- EP -->
     <section class="section ep-section" id="ep">
-        <div class="section-label">03 / EM BREVE</div>
+        <div class="section-label">EM BREVE</div>
 
         <div class="ep-grid">
 
@@ -144,10 +146,105 @@
 
         </div>
     </section>
+    <!-- SHOW -->
+    <section class="section live-section" id="live">
+
+        <div class="section-label">AO VIVO</div>
+
+        <div class="live-heading">
+            <div class="live-title">
+                <span class="live-subtitle">
+            PRIMEIRO SHOW
+        </span>
+
+                <h2>
+                    Uma noite<br>
+                    <em>para lembrar.</em>
+                </h2>
+
+            </div>
+
+            <div class="live-intro">
+
+                <p>
+                    O primeiro show da Bruna Foss em Curitiba
+                    Uma noite de música pela primeira vez ao vivo.
+                <p>
+                <span class="live-date">
+            AGOSTO · 2026
+        </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- PHOTOBOOK -->
+
+        <div class="photobook">
+
+            <!-- FOTO 01 -->
+            <button class="photo photo-main" data-photo="/images/show-01.jpg">
+                <img
+                        src="/images/show-01.jpg"
+                        alt="Bruna Foss em seu primeiro show"
+                >
+            </button>
+
+            <!-- FOTO 02 -->
+            <button class="photo photo-small photo-02" data-photo="/images/show-02.jpg">
+                <img
+                        src="/images/show-02.jpg"
+                        alt="Público durante o primeiro show de Bruna Foss"
+                >
+            </button>
+
+            <!-- FOTO 03 -->
+            <button class="photo photo-wide photo-03" data-photo="/images/show-03.jpg">
+                <img
+                        src="/images/show-03.jpg"
+                        alt="Público assistindo ao show de Bruna Foss"
+                >
+            </button>
+
+            <!-- FOTO 04 -->
+            <button class="photo photo-small photo-04" data-photo="/images/show-04.jpg">
+                <img
+                        src="/images/show-04.jpg"
+                        alt="Momento do primeiro show de Bruna Foss"
+                >
+            </button>
+
+            <!-- FOTO 05 -->
+            <button class="photo photo-large photo-05" data-photo="/images/show-05.jpg">
+                <img
+                        src="/images/show-05.jpg"
+                        alt="Bruna Foss cantando no palco"
+                >
+            </button>
+
+            <!-- FOTO 06 -->
+            <button class="photo photo-small photo-06" data-photo="/images/show-06.jpg">
+                <img
+                        src="/images/show-06.jpg"
+                        alt="Bruna Foss durante o show"
+                >
+            </button>
+
+
+        </div>
+
+
+        <div class="live-footer">
+            <span>BRUNA FOSS</span>
+            <span>CURITIBA · 2026</span>
+        </div>
+
+    </section>
     <!-- EXTRA -->
     <section class="section extra-section" id="extra">
 
-        <div class="section-label">04 / EXTRA</div>
+        <div class="section-label">EXTRA</div>
 
         <div class="extra-heading">
             <div>
@@ -187,7 +284,7 @@
     </section>
     <!-- SOCIAL -->
     <section class="section contact-section" id="contact">
-        <div class="section-label">05 / SOCIAL</div>
+        <div class="section-label">SOCIAL</div>
 
         <div class="contact-content">
             <p class="eyebrow">SIGA A BRUNA</p>
@@ -261,7 +358,40 @@
         Todo o conteúdo artístico e visual pertence à artista e Alt Music Group.
         Desenvolvido por Beatriz Moutinho.</p>
 </footer>
+<!-- PHOTO LIGHTBOX -->
+<div class="photo-lightbox" id="photoLightbox" aria-hidden="true">
 
+    <button
+            class="lightbox-close"
+            id="lightboxClose"
+            aria-label="Fechar galeria"
+    >
+        ×
+    </button>
+
+    <button
+            class="lightbox-prev"
+            id="lightboxPrev"
+            aria-label="Foto anterior"
+    >
+        ←
+    </button>
+
+    <img
+            id="lightboxImage"
+            src=""
+            alt=""
+    >
+
+    <button
+            class="lightbox-next"
+            id="lightboxNext"
+            aria-label="Próxima foto"
+    >
+        →
+    </button>
+
+</div>
 <script src="/js/script.js"></script>
 </body>
 </html>
