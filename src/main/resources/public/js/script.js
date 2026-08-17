@@ -299,7 +299,7 @@ if (extraFeatured && extraGrid) {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Assistir no YouTube ↗
+                        Assistir no YouTube  <span class="mobile-hide-arrow">↗</span>
                     </a>
 
                 </div>
@@ -337,7 +337,7 @@ if (extraFeatured && extraGrid) {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            Ler matéria ↗
+                            Ler matéria ↗ <span class="mobile-hide-arrow">↗</span>
                         </a>
 
                     </div>

@@ -2476,7 +2476,10 @@ footer p {
 
         transform: rotate(45deg);
     }
-
+    /* Esconde setas externas no mobile */
+    .mobile-hide-arrow {
+        display: none;
+    }
 
     /* =========================================
        PLAY BUTTON — MOBILE
