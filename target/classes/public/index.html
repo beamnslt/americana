@@ -14,12 +14,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="/css/style.css">
+    <!-- SCHEMA.ORG — BRUNA FOSS -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Bruna Foss",
+            "jobTitle": "Cantora e compositora",
+            "url": "https://brunafoss.com.br/",
+            "image": "https://brunafoss.com.br/images/americana.jpg",
+            "sameAs": [
+                "https://www.instagram.com/brunafosss",
+                "https://www.tiktok.com/@brunafosss",
+                "https://x.com/brunafosss",
+                "https://open.spotify.com/artist/4FrN1zhyhsLkK3Kxy5hYh6",
+                "https://youtube.com/@brunafoss",
+                "https://www.cifraclub.com.br/bruna-foss/"
+            ]
+        }
+    </script>
 </head>
 
 <body>
 
 <header class="site-header">
-    <a class="logo" href="#home">BRUNA<br>FOSS</a>
+
+    <a class="logo" href="#home">
+        BRUNA<br>FOSS
+    </a>
 
     <nav class="desktop-nav">
         <a href="#about">Sobre</a>
@@ -27,13 +49,70 @@
         <a href="#ep">EP</a>
         <a href="#live">Show</a>
         <a href="#extra">Extra</a>
-        <a href="#contact">Social</a>
     </nav>
 
-    <button class="menu-button" id="menuButton" aria-label="Open menu">
+    <div class="header-socials">
+
+        <!-- INSTAGRAM -->
+        <a
+                href="https://www.instagram.com/brunafosss"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+        >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                <circle cx="12" cy="12" r="4"></circle>
+                <circle cx="17.5" cy="6.5" r="1"></circle>
+            </svg>
+        </a>
+
+        <!-- TIKTOK -->
+        <a
+                href="https://www.tiktok.com/@brunafosss"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TikTok"
+        >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M16 3c.4 2.3 1.7 3.8 4 4v3.1c-1.5 0-2.8-.4-4-1.1v6.4c0 3.7-2.7 6.2-6.2 6.2A5.8 5.8 0 0 1 4 15.8c0-3.3 2.5-5.9 5.8-5.9.4 0 .8 0 1.2.1v3.2a3 3 0 0 0-1.2-.2 2.8 2.8 0 1 0 2.9 2.8V3H16z"></path>
+            </svg>
+        </a>
+
+        <!-- X -->
+        <a
+                href="https://x.com/brunafosss"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X"
+        >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 3h4.6l4.1 5.6L17.2 3H20l-5.9 7.1L20.5 21h-4.6l-4.6-6.3L5.7 21H3l6.1-7.7L4 3zm4.1 1.8H6.7l8.9 14.4h1.4L8.1 4.8z"></path>
+            </svg>
+        </a>
+
+        <!-- SPOTIFY -->
+        <a
+                href="https://open.spotify.com/artist/4FrN1zhyhsLkK3Kxy5hYh6"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Spotify"
+        >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M7.5 9.5c3.2-.9 6.8-.6 9.6.7"></path>
+                <path d="M8.2 12.2c2.7-.7 5.6-.4 7.9.7"></path>
+                <path d="M8.8 14.8c2.1-.5 4.4-.3 6.2.5"></path>
+            </svg>
+        </a>
+
+    </div>
+
+    <button class="menu-button" id="menuButton" aria-label="Abrir menu">
         <span></span>
         <span></span>
     </button>
+
 </header>
 
 <div class="mobile-menu" id="mobileMenu">
@@ -50,7 +129,7 @@
     <!-- HERO -->
     <section class="hero">
         <div class="hero-image">
-                <img src="/images/show-01.jpg" alt="Bruna Foss">
+                <img src="/images/heropic.jpg" alt="Bruna Foss">
         </div>
 
         <div class="hero-content">
@@ -58,7 +137,6 @@
             <h1>BRUNA<br><em>FOSS</em></h1>
             <p class="hero-description">
                 Onde a música brasileira encontra as histórias de quem viu o mundo.
-                Entre o Brasil que a formou e o mundo que a transformou.
             </p>
             <a class="scroll-link" href="#about">↓ Explorar</a>
         </div>
@@ -93,7 +171,6 @@
 
     <!-- MUSIC -->
     <section class="section music-section" id="music">
-        <div class="section-label">MÚSICA</div>
 
         <div class="music-heading">
             <div>
@@ -118,7 +195,6 @@
 
     <!-- EP -->
     <section class="section ep-section" id="ep">
-        <div class="section-label">EM BREVE</div>
 
         <div class="ep-grid">
 
@@ -151,8 +227,6 @@
     </section>
     <!-- SHOW -->
     <section class="section live-section" id="live">
-
-        <div class="section-label">AO VIVO</div>
 
         <div class="live-heading">
             <div class="live-title">
@@ -247,8 +321,6 @@
     <!-- EXTRA -->
     <section class="section extra-section" id="extra">
 
-        <div class="section-label">EXTRA</div>
-
         <div class="extra-heading">
             <div>
                 <p class="eyebrow">MAIS DE BRUNA</p>
@@ -287,18 +359,17 @@
     </section>
     <!-- SOCIAL -->
     <section class="section contact-section" id="contact">
-        <div class="section-label">SOCIAL</div>
 
         <div class="contact-content">
-            <p class="eyebrow">SIGA A BRUNA</p>
+            <p class="eyebrow">FIQUE CONECTADO</p>
 
             <h2>
-                Fique<br>
-                <em>conectado.</em>
+                Acompanhe <br>
+                <em>a Bruna.</em>
             </h2>
 
             <p class="social-placeholder">
-                Acompanhe Bruna Foss nas redes e plataformas.
+                Siga Bruna Foss nas redes e plataformas.
             </p>
 
             <div class="social-links">
@@ -357,9 +428,9 @@
 
 <footer>
     <div class="footer-logo">BRUNA FOSS</div>
-    <p>© 2026 Projeto sem fins lucrativos.
+    <p>© 2026
         Todo o conteúdo artístico e visual pertence à artista e Alt Music Group.
-        Desenvolvido por Beatriz Moutinho.</p>
+       </p>
 </footer>
 <!-- PHOTO LIGHTBOX -->
 <div class="photo-lightbox" id="photoLightbox" aria-hidden="true">
