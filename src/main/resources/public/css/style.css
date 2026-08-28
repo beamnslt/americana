@@ -2919,3 +2919,51 @@ footer p {
         letter-spacing: 0.16em;
     }
 }
+/* =========================================================
+   HERO — MOBILE CLEAN
+========================================================= */
+
+@media (max-width: 600px) {
+
+    /* Esconde "CANTORA E COMPOSITORA BRASILEIRA" */
+    .hero .eyebrow {
+        display: none;
+    }
+
+    /* Esconde a descrição */
+    .hero-description {
+        display: none;
+    }
+
+    /* Nome da artista */
+    .hero h1 {
+        font-size: clamp(58px, 17vw, 82px);
+        line-height: 0.78;
+        letter-spacing: 0.06em;
+    }
+
+    /* Aproxima o EXPLORE do nome */
+    .scroll-link {
+        margin-top: 35px;
+    }
+}
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 0 6vw 10vh;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: clamp(58px, 17vw, 82px);
+        line-height: 0.78;
+        letter-spacing: 0.06em;
+    }
+
+    .scroll-link {
+        margin-top: 40px;
+    }
+}
