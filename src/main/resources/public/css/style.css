@@ -2967,3 +2967,99 @@ footer p {
         margin-top: 40px;
     }
 }
+/* =========================================================
+   SONG PAGE — NAVEGAÇÃO LATERAL
+========================================================= */
+
+.song-side-nav {
+    position: fixed;
+
+    right: 32px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 900;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 16px;
+}
+
+
+/* ÁREA CLICÁVEL */
+
+.song-side-link {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+
+/* PONTO */
+
+.song-side-link span {
+    display: block;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: var(--cream);
+
+    opacity: 0.35;
+
+    transition:
+            width 0.35s ease,
+            height 0.35s ease,
+            opacity 0.35s ease,
+            background 0.35s ease,
+            box-shadow 0.35s ease;
+}
+
+
+/* HOVER */
+
+.song-side-link:hover span {
+    width: 5px;
+    height: 5px;
+
+    opacity: 0.75;
+}
+
+
+/* PONTO ATIVO */
+
+.song-side-link.active span {
+    width: 7px;
+    height: 7px;
+
+    background: var(--accent);
+
+    opacity: 1;
+
+    box-shadow:
+            0 0 10px rgba(125, 169, 154, 0.35);
+}
+
+
+/* =========================================================
+   SONG PAGE — MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .song-side-nav {
+        display: none;
+    }
+
+}

@@ -557,8 +557,34 @@ if (songTitle) {
 
     } else {
 
-        document.title = `${track.title} — Bruna Foss`;
+        document.title = `${track.title} — Bruna Foss | Letra`;
+        const canonicalUrl =
+            document.getElementById("canonicalUrl");
 
+        if (canonicalUrl) {
+            canonicalUrl.href =
+                `https://brunafoss.com.br/song.html?track=${track.id}`;
+            const songSchema = document.createElement("script");
+
+            songSchema.type = "application/ld+json";
+
+            songSchema.textContent = JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "MusicRecording",
+                "name": track.title,
+                "byArtist": {
+                    "@type": "MusicGroup",
+                    "name": "Bruna Foss",
+                    "url": "https://brunafoss.com.br/"
+                },
+                "url": `https://brunafoss.com.br/song.html?track=${track.id}`,
+                "image": `https://brunafoss.com.br${track.image}`,
+                "duration": `PT${track.duration.split(":")[0]}M${track.duration.split(":")[1]}S`,
+                "genre": "Música brasileira"
+            });
+
+            document.head.appendChild(songSchema);
+        }
         /* SEO — DESCRIPTION */
 
         let metaDescription =
@@ -575,7 +601,7 @@ if (songTitle) {
         }
 
         metaDescription.content =
-            `${track.title}, música de Bruna Foss. Conheça a letra, o significado e assista ao vídeo da canção.`;
+            `${track.title}, música de Bruna Foss. Conheça a letra, o significado e assista aos vídeos`;
 
         document.getElementById("songTitle").textContent = track.title;
         document.getElementById("songCategory").textContent = track.type;
@@ -858,3 +884,87 @@ if (photoButtons.length) {
     });
 
 }
+/* =========================================================
+   SONG PAGE — NAVEGAÇÃO LATERAL
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const sideLinks = document.querySelectorAll(".song-side-link");
+
+    if (!sideLinks.length) return;
+
+    const sections = [
+        document.getElementById("song-hero"),
+        document.getElementById("song-video"),
+        document.getElementById("song-lyrics"),
+        document.getElementById("song-meaning")
+    ].filter(Boolean);
+
+    /* -----------------------------------------------------
+       CLIQUE
+    ----------------------------------------------------- */
+
+    sideLinks.forEach(link => {
+
+        link.addEventListener("click", event => {
+
+            event.preventDefault();
+
+            const targetId = link.getAttribute("href");
+            const target = document.querySelector(targetId);
+
+            if (!target) return;
+
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        });
+
+    });
+
+
+    /* -----------------------------------------------------
+       IDENTIFICA A SEÇÃO ATUAL
+    ----------------------------------------------------- */
+
+    const updateActiveSection = () => {
+
+        const scrollPosition = window.scrollY + window.innerHeight * 0.45;
+
+        let currentSection = sections[0];
+
+        sections.forEach(section => {
+
+            if (section.offsetTop <= scrollPosition) {
+                currentSection = section;
+            }
+
+        });
+
+        sideLinks.forEach(link => {
+            link.classList.remove("active");
+        });
+
+        const activeLink = document.querySelector(
+            `.song-side-link[href="#${currentSection.id}"]`
+        );
+
+        if (activeLink) {
+            activeLink.classList.add("active");
+        }
+
+    };
+
+
+    window.addEventListener(
+        "scroll",
+        updateActiveSection,
+        { passive: true }
+    );
+
+    updateActiveSection();
+
+});

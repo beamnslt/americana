@@ -3,12 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Song — Bruna Foss</title>
+    <title>Bruna Foss - Música, Letra e Significado</title>
+    <meta
+            name="description"
+            content="Conheça as músicas de Bruna Foss, suas letras, significados e vídeos."
+    >
+    <meta name="robots" content="index, follow">
+
+    <link
+            rel="canonical"
+            href="https://brunafoss.com.br/song.html"
+            id="canonicalUrl"
+    >
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -16,16 +26,16 @@
 
 <header class="site-header">
 
-    <a class="logo" href="/index.html">
-        BRUNA FOSS
+    <a class="logo" href="/">
+        BRUNA<br>FOSS
     </a>
 
     <nav class="desktop-nav">
-        <a href="#about">Sobre</a>
-        <a href="#music">Música</a>
-        <a href="#ep">EP</a>
-        <a href="#live">Show</a>
-        <a href="#extra">Extra</a>
+        <a href="/index.html#about">Sobre</a>
+        <a href="/index.html#music">Música</a>
+        <a href="/index.html#ep">EP</a>
+        <a href="/index.html#live">Show</a>
+        <a href="/index.html#extra">Extra</a>
     </nav>
 
     <div class="header-socials">
@@ -97,16 +107,34 @@
     <a href="/index.html#about">Sobre</a>
     <a href="/index.html#music">Música</a>
     <a href="/index.html#ep">EP</a>
-    <a href="#live">Show</a>
+    <a href="/index.html#live">Show</a>
     <a href="/index.html#extra">Extras</a>
     <a href="/index.html#contact">Social</a>
 
 </div>
 
 <main class="song-page">
+    <!-- NAVEGAÇÃO LATERAL DA MÚSICA -->
+    <nav class="song-side-nav" aria-label="Navegação da música">
 
-    <section class="song-hero">
+        <a href="#song-hero" class="song-side-link active" aria-label="Música">
+            <span></span>
+        </a>
 
+        <a href="#song-video" class="song-side-link" aria-label="Vídeo">
+            <span></span>
+        </a>
+
+        <a href="#song-lyrics" class="song-side-link" aria-label="Letra">
+            <span></span>
+        </a>
+
+        <a href="#song-meaning" class="song-side-link" aria-label="Significado">
+            <span></span>
+        </a>
+
+    </nav>
+    <section class="song-hero" id="song-hero">
         <div class="song-image image-placeholder" id="songImage">
             <div>
                 <span>SONG IMAGE</span>
@@ -147,8 +175,7 @@
 
     <!-- VIDEO -->
 
-    <section class="video-section">
-
+    <section class="video-section" id="song-video">
         <div class="video-heading">
             <p class="eyebrow">Ouça / assista</p>
 
@@ -175,8 +202,7 @@
 
     <!-- LETRA -->
 
-    <section class="song-section">
-
+    <section class="song-section" id="song-lyrics">
         <div class="section-label">01 / LETRA</div>
 
         <div class="lyrics-layout">
@@ -196,8 +222,7 @@
 
     <!-- SIGNIFICADO -->
 
-    <section class="song-section meaning-section">
-
+    <section class="song-section meaning-section" id="song-meaning">
         <div class="section-label">02 / SIGNIFICADO</div>
 
         <div class="meaning-layout">

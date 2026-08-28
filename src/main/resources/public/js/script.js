@@ -884,3 +884,87 @@ if (photoButtons.length) {
     });
 
 }
+/* =========================================================
+   SONG PAGE — NAVEGAÇÃO LATERAL
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const sideLinks = document.querySelectorAll(".song-side-link");
+
+    if (!sideLinks.length) return;
+
+    const sections = [
+        document.getElementById("song-hero"),
+        document.getElementById("song-video"),
+        document.getElementById("song-lyrics"),
+        document.getElementById("song-meaning")
+    ].filter(Boolean);
+
+    /* -----------------------------------------------------
+       CLIQUE
+    ----------------------------------------------------- */
+
+    sideLinks.forEach(link => {
+
+        link.addEventListener("click", event => {
+
+            event.preventDefault();
+
+            const targetId = link.getAttribute("href");
+            const target = document.querySelector(targetId);
+
+            if (!target) return;
+
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        });
+
+    });
+
+
+    /* -----------------------------------------------------
+       IDENTIFICA A SEÇÃO ATUAL
+    ----------------------------------------------------- */
+
+    const updateActiveSection = () => {
+
+        const scrollPosition = window.scrollY + window.innerHeight * 0.45;
+
+        let currentSection = sections[0];
+
+        sections.forEach(section => {
+
+            if (section.offsetTop <= scrollPosition) {
+                currentSection = section;
+            }
+
+        });
+
+        sideLinks.forEach(link => {
+            link.classList.remove("active");
+        });
+
+        const activeLink = document.querySelector(
+            `.song-side-link[href="#${currentSection.id}"]`
+        );
+
+        if (activeLink) {
+            activeLink.classList.add("active");
+        }
+
+    };
+
+
+    window.addEventListener(
+        "scroll",
+        updateActiveSection,
+        { passive: true }
+    );
+
+    updateActiveSection();
+
+});

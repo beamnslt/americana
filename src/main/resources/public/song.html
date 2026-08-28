@@ -114,9 +114,27 @@
 </div>
 
 <main class="song-page">
+    <!-- NAVEGAÇÃO LATERAL DA MÚSICA -->
+    <nav class="song-side-nav" aria-label="Navegação da música">
 
-    <section class="song-hero">
+        <a href="#song-hero" class="song-side-link active" aria-label="Música">
+            <span></span>
+        </a>
 
+        <a href="#song-video" class="song-side-link" aria-label="Vídeo">
+            <span></span>
+        </a>
+
+        <a href="#song-lyrics" class="song-side-link" aria-label="Letra">
+            <span></span>
+        </a>
+
+        <a href="#song-meaning" class="song-side-link" aria-label="Significado">
+            <span></span>
+        </a>
+
+    </nav>
+    <section class="song-hero" id="song-hero">
         <div class="song-image image-placeholder" id="songImage">
             <div>
                 <span>SONG IMAGE</span>
@@ -157,8 +175,7 @@
 
     <!-- VIDEO -->
 
-    <section class="video-section">
-
+    <section class="video-section" id="song-video">
         <div class="video-heading">
             <p class="eyebrow">Ouça / assista</p>
 
@@ -185,8 +202,7 @@
 
     <!-- LETRA -->
 
-    <section class="song-section">
-
+    <section class="song-section" id="song-lyrics">
         <div class="section-label">01 / LETRA</div>
 
         <div class="lyrics-layout">
@@ -206,8 +222,7 @@
 
     <!-- SIGNIFICADO -->
 
-    <section class="song-section meaning-section">
-
+    <section class="song-section meaning-section" id="song-meaning">
         <div class="section-label">02 / SIGNIFICADO</div>
 
         <div class="meaning-layout">

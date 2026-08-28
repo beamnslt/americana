@@ -2851,3 +2851,215 @@ footer p {
 
     transform: translateY(-50%);
 }
+/* =========================================================
+   HERO — AJUSTES MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .hero {
+        min-height: 100svh;
+
+        padding: 0 6vw 7vh;
+
+        align-items: flex-end;
+    }
+
+    /* IMAGEM */
+
+    .hero-image img {
+        object-position: 58% center;
+    }
+
+    /* CONTEÚDO */
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .hero .eyebrow {
+        margin-bottom: 18px;
+
+        font-size: 10px;
+        letter-spacing: 0.18em;
+
+        white-space: nowrap;
+    }
+
+    /* BRUNA FOSS */
+
+    .hero h1 {
+        font-size: clamp(58px, 17vw, 82px);
+
+        line-height: 0.78;
+
+        letter-spacing: 0.06em;
+    }
+
+    /* DESCRIÇÃO */
+
+    .hero-description {
+        max-width: 330px;
+
+        margin-top: 28px;
+
+        font-size: 15px;
+
+        line-height: 1.55;
+    }
+
+    /* EXPLORAR */
+
+    .scroll-link {
+        margin-top: 38px;
+
+        font-size: 11px;
+
+        letter-spacing: 0.16em;
+    }
+}
+/* =========================================================
+   HERO — MOBILE CLEAN
+========================================================= */
+
+@media (max-width: 600px) {
+
+    /* Esconde "CANTORA E COMPOSITORA BRASILEIRA" */
+    .hero .eyebrow {
+        display: none;
+    }
+
+    /* Esconde a descrição */
+    .hero-description {
+        display: none;
+    }
+
+    /* Nome da artista */
+    .hero h1 {
+        font-size: clamp(58px, 17vw, 82px);
+        line-height: 0.78;
+        letter-spacing: 0.06em;
+    }
+
+    /* Aproxima o EXPLORE do nome */
+    .scroll-link {
+        margin-top: 35px;
+    }
+}
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 0 6vw 10vh;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: clamp(58px, 17vw, 82px);
+        line-height: 0.78;
+        letter-spacing: 0.06em;
+    }
+
+    .scroll-link {
+        margin-top: 40px;
+    }
+}
+/* =========================================================
+   SONG PAGE — NAVEGAÇÃO LATERAL
+========================================================= */
+
+.song-side-nav {
+    position: fixed;
+
+    right: 32px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 900;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 16px;
+}
+
+
+/* ÁREA CLICÁVEL */
+
+.song-side-link {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+
+/* PONTO */
+
+.song-side-link span {
+    display: block;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: var(--cream);
+
+    opacity: 0.35;
+
+    transition:
+            width 0.35s ease,
+            height 0.35s ease,
+            opacity 0.35s ease,
+            background 0.35s ease,
+            box-shadow 0.35s ease;
+}
+
+
+/* HOVER */
+
+.song-side-link:hover span {
+    width: 5px;
+    height: 5px;
+
+    opacity: 0.75;
+}
+
+
+/* PONTO ATIVO */
+
+.song-side-link.active span {
+    width: 7px;
+    height: 7px;
+
+    background: var(--accent);
+
+    opacity: 1;
+
+    box-shadow:
+            0 0 10px rgba(125, 169, 154, 0.35);
+}
+
+
+/* =========================================================
+   SONG PAGE — MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .song-side-nav {
+        display: none;
+    }
+
+}
