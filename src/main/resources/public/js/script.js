@@ -557,8 +557,34 @@ if (songTitle) {
 
     } else {
 
-        document.title = `${track.title} — Bruna Foss`;
+        document.title = `${track.title} — Bruna Foss | Letra`;
+        const canonicalUrl =
+            document.getElementById("canonicalUrl");
 
+        if (canonicalUrl) {
+            canonicalUrl.href =
+                `https://brunafoss.com.br/song.html?track=${track.id}`;
+            const songSchema = document.createElement("script");
+
+            songSchema.type = "application/ld+json";
+
+            songSchema.textContent = JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "MusicRecording",
+                "name": track.title,
+                "byArtist": {
+                    "@type": "MusicGroup",
+                    "name": "Bruna Foss",
+                    "url": "https://brunafoss.com.br/"
+                },
+                "url": `https://brunafoss.com.br/song.html?track=${track.id}`,
+                "image": `https://brunafoss.com.br${track.image}`,
+                "duration": `PT${track.duration.split(":")[0]}M${track.duration.split(":")[1]}S`,
+                "genre": "Música brasileira"
+            });
+
+            document.head.appendChild(songSchema);
+        }
         /* SEO — DESCRIPTION */
 
         let metaDescription =
@@ -575,7 +601,7 @@ if (songTitle) {
         }
 
         metaDescription.content =
-            `${track.title}, música de Bruna Foss. Conheça a letra, o significado e assista ao vídeo da canção.`;
+            `${track.title}, música de Bruna Foss. Conheça a letra, o significado e assista aos vídeos`;
 
         document.getElementById("songTitle").textContent = track.title;
         document.getElementById("songCategory").textContent = track.type;
