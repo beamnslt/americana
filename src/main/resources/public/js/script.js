@@ -648,13 +648,13 @@ if (songTitle) {
         setupExternalLink(
             document.getElementById("spotifyButton"),
             track.spotify,
-            "Spotify ↗"
+            "Spotify"
         );
 
         setupExternalLink(
             document.getElementById("youtubeButton"),
             track.youtube,
-            "YouTube ↗"
+            "YouTube"
         );
 
         /* IMAGE */
@@ -968,3 +968,70 @@ document.addEventListener("DOMContentLoaded", () => {
     updateActiveSection();
 
 });
+/* =========================================================
+   COUNTDOWN — TALVEZ
+========================================================= */
+
+const singleCountdown = document.getElementById("singleCountdown");
+
+if (singleCountdown) {
+
+    const releaseDate = new Date(
+        "2026-09-03T21:00:00-03:00"
+    ).getTime();
+
+    const daysElement = document.getElementById("countdownDays");
+    const hoursElement = document.getElementById("countdownHours");
+    const minutesElement = document.getElementById("countdownMinutes");
+    const secondsElement = document.getElementById("countdownSeconds");
+
+    let countdownInterval = null;
+
+    const updateCountdown = () => {
+
+        const now = Date.now();
+        const distance = releaseDate - now;
+
+        if (distance <= 0) {
+
+            singleCountdown.innerHTML = `
+                <span class="countdown-live">
+                    DISPONÍVEL AGORA
+                </span>
+            `;
+
+            if (countdownInterval) {
+                clearInterval(countdownInterval);
+            }
+
+            return;
+        }
+
+        const days = Math.floor(
+            distance / (1000 * 60 * 60 * 24)
+        );
+
+        const hours = Math.floor(
+            (distance / (1000 * 60 * 60)) % 24
+        );
+
+        const minutes = Math.floor(
+            (distance / (1000 * 60)) % 60
+        );
+
+        const seconds = Math.floor(
+            (distance / 1000) % 60
+        );
+
+        daysElement.textContent = String(days).padStart(2, "0");
+        hoursElement.textContent = String(hours).padStart(2, "0");
+        minutesElement.textContent = String(minutes).padStart(2, "0");
+        secondsElement.textContent = String(seconds).padStart(2, "0");
+    };
+
+    updateCountdown();
+
+    if (Date.now() < releaseDate) {
+        countdownInterval = setInterval(updateCountdown, 1000);
+    }
+}

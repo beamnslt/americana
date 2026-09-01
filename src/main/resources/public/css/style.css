@@ -2813,7 +2813,7 @@ footer p {
     position: absolute;
 
     right: 32px;
-    top: 50%;
+    top: 45%;
 
     transform: translateY(-50%);
 
@@ -2967,6 +2967,25 @@ footer p {
         margin-top: 40px;
     }
 }
+.single-countdown {
+    margin-top: 22px;
+    padding-top: 16px;
+}
+
+.single-countdown > div {
+    padding-right: 10px;
+    margin-right: 10px;
+}
+
+.single-countdown strong {
+    font-size: 17px;
+}
+
+.single-countdown span {
+    margin-left: 4px;
+    font-size: 6px;
+}
+}
 /* =========================================================
    SONG PAGE — NAVEGAÇÃO LATERAL
 ========================================================= */
@@ -3062,4 +3081,78 @@ footer p {
         display: none;
     }
 
+}
+/* =========================
+   COUNTDOWN — TALVEZ
+   ========================= */
+
+.single-countdown {
+    display: flex;
+    align-items: center;
+    gap: 0;
+
+    width: 100%;
+
+    margin-top: 30px;
+    padding-top: 18px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.single-countdown > div {
+    flex: 1;
+
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+
+    padding: 0 12px;
+
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.single-countdown > div:first-child {
+    padding-left: 0;
+}
+
+.single-countdown > div:last-child {
+    padding-right: 0;
+    border-right: none;
+}
+
+.single-countdown strong {
+    font-family: "Courier Prime", monospace;
+
+    font-size: 28px;
+    font-weight: 400;
+
+    line-height: 1;
+
+    letter-spacing: 0.04em;
+
+    color: var(--cream);
+}
+
+.single-countdown span {
+    margin-left: 6px;
+
+    color: var(--muted);
+
+    font-size: 7px;
+
+    letter-spacing: 0.13em;
+
+    line-height: 1;
+}
+
+.single-countdown .countdown-live {
+    margin: 0;
+
+    color: var(--accent);
+
+    font-family: "Courier Prime", monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 0.16em;
 }

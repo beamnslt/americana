@@ -45,7 +45,6 @@
     </a>
 
     <nav class="desktop-nav">
-        <a href="#about">Sobre</a>
         <a href="#music">Música</a>
         <a href="#ep">EP</a>
         <a href="#live">Show</a>
@@ -117,7 +116,6 @@
 </header>
 
 <div class="mobile-menu" id="mobileMenu">
-    <a href="#about">Sobre</a>
     <a href="#music">Músicas</a>
     <a href="#ep">EP</a>
     <a href="#live">Show</a>
@@ -136,37 +134,7 @@
         <div class="hero-content">
             <p class="eyebrow">CANTORA E COMPOSITORA BRASILEIRA</p>
             <h1>BRUNA<br><em>FOSS</em></h1>
-            <p class="hero-description">
-                Onde a música brasileira encontra as histórias de quem viu o mundo.
-            </p>
             <a class="scroll-link" href="#about">↓ Explorar</a>
-        </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="section about-section" id="about">
-        <div class="section-label">SOBRE</div>
-
-        <div class="about-grid">
-            <h2>Música brasileira<br><em>contada por olhos que aprenderam a ver <span>o mundo.</span></em></h2>
-
-            <div class="about-text">
-                <p>
-                    Bruna Foss é uma cantora e compositora brasileira que vive pelo mundo.
-                    Atualmente estudando música em Grinnell College, nos Estados Unidos,
-                    Bruna escreve sobre as suas experiências estrangeiras através da música brasileira.
-                </p>
-
-                <p>
-                    Em 2025, a cantora lançou dois singles, “Não Volto Mais” e
-                    “Don't Change Your Mind”, que iniciaram a sua trajetória como artista.
-                </p>
-
-                <p>
-                    Agora, em 2026, a cantora prepara o lançamento de seu EP de estreia
-                    com o single “Americana”, que já está disponível.
-                </p>
-            </div>
         </div>
     </section>
 
@@ -242,9 +210,28 @@
                             <strong>03.09 · 21H</strong>
                         </div>
 
-                        <p>
-                            Segundo single do EP de estreia.
-                        </p>
+                        <div class="single-countdown" id="singleCountdown" aria-live="polite">
+                            <div>
+                                <strong id="countdownDays">00</strong>
+                                <span>DIAS</span>
+                            </div>
+
+                            <div>
+                                <strong id="countdownHours">00</strong>
+                                <span>HORAS</span>
+                            </div>
+
+                            <div>
+                                <strong id="countdownMinutes">00</strong>
+                                <span>MIN</span>
+                            </div>
+
+                            <div>
+                                <strong id="countdownSeconds">00</strong>
+                                <span>SEG</span>
+                            </div>
+                        </div>
+
 
                         <a
                                 class="presave-button"
